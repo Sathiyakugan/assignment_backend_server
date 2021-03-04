@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Offcanvas template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ static_url('css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ static_url('css/style.css') }}" rel="stylesheet">
+  </head>
+
+  <body class="bg-light">
+
+
+    <main role="main" class="container">
+      <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+        <div class="lh-100">
+          <h6 class="mb-0 text-white lh-100">Feedback System</h6>
+          <small>Simple system to enter your feedback.</small>
+        </div>
+      </div>
+
+      <div>
+          <form>
+             <button  class="btn btn-sm btn-primary" type="submit" href="/upload">Upload log files</button>
+          </form>
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Enter your Feedback</h6>
+        <form method='post' action='/'>
+            {% raw xsrf_form_html() %}
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Name</label>
+              <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Rating</label>
+              <select class="form-control" id="exampleFormControlSelect1" name="rating">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Feedback</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="feedback"></textarea>
+            </div>
+          <small class="d-block text-right mt-3">
+             <button type="submit" class="btn btn-primary">Submit</button>
+          </small>
+        </form>
+      </div>
+
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Feedbacks</h6>
+         {% for feedback in feedbacks %}
+            <div class="media text-muted pt-3">
+              <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+              <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                  <strong class="text-gray-dark">{{ feedback[0] }}</strong>
+                </div>
+                <span class="d-block">Rating ; {{ feedback[1] }}/5</span>
+                <span class="d-block">{{ feedback[2] }}</span>
+              </div>
+            </div>
+         {% end %}
+      </div>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="{{ static_url('js/jquery-3.2.1.slim.min.js') }}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{{ static_url('js/popper.min.js') }}"></script>
+    <script src="{{ static_url('js/bootstrap.min.js') }}"></script>
+    <script src="{{ static_url('js/app.js') }}"></script>
+  </body>
+</html>
