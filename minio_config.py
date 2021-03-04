@@ -1,3 +1,3 @@
-ENDPOINT = ""
-ACCESS_KEY = ""
-SECRET_KEY = ""
+ENDPOINT = "ff"
+ACCESS_KEY = "ff"
+SECRET_KEY = "dd"
