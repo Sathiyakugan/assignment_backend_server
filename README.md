@@ -14,8 +14,6 @@ following requirements need to be installed
 - tornado
 - minio
 
-please install the Boto3 as per the [documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#installation). 
-
 ```sh
 $ pip3 install -r requirements.txt
 ```
