@@ -6,28 +6,21 @@ It is an application designed using tornado which has the capabilities to
 
 ![](/static/images/ss.png)
 
-### Pre Requesties
-This application uses Python3. Please make sure you have installed it.
-You need to have pip installed along with the Python.
-
-following requirements need to be installed
-- tornado
-- minio
-
-```sh
-$ pip3 install -r requirements.txt
-```
-
-In the `minio_config.py` replace the placeholders with the  `ENDPOINT`, `ACCESS_KEY`, and `SECRET_KEY` with your configuration. 
 
 ### Running the Application
-1. In the terminal execute the following command:
+
+1. Clone this repository
     ```sh
-    $ python3 app.py 
+    git clone https://github.com/Sathiyakugan/assignment_backend_server.git
+    cd assignment_backend_server
     ```
-   Please note that  in some linux versions you can use   `python app.py `  
-2. visit   http://localhost:8000/  
-3. Enjoy the Application. 
+2. In the `minio_config.py` replace the placeholders with the  `ENDPOINT`, `ACCESS_KEY`, and `SECRET_KEY` with your configuration.
+3. Use Docker Compose to build and run the app 
+    ```
+    docker-compose up
+    ```  
+4. visit   http://localhost:8000/  
+5. Enjoy the Application. 
 
 License
 ----

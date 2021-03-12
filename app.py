@@ -29,6 +29,7 @@ application = tornado.web.Application(urls, **settings)
 
 
 if __name__ == "__main__":
+    os.makedirs("logs", exist_ok=True)
     args = sys.argv
     args.append("--log_file_prefix=logs/app.log")
     tornado.options.parse_command_line(args)

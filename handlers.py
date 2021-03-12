@@ -6,6 +6,7 @@ import sqlite3
 
 import minio_config
 
+os.makedirs("db", exist_ok=True)
 conn = sqlite3.connect('db/app.db')
 c = conn.cursor()
 
